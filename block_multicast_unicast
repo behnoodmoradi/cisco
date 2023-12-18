@@ -1,0 +1,13 @@
+
+
+configure terminal
+  interface gigabitethernet1/1
+  switchport block multicast  ! Blocks unknown multicast forwarding to the port. 
+  switchport block unicast    ! Blocks unknown unicast forwarding to the port. 
+  end
+
+show interface gigabitethernet1/1 switchport
+
+
+Configuring IGMP Snooping and Filtering:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/12-2/53SG/configuration/config/multi.html
