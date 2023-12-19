@@ -11,3 +11,16 @@ show interface gigabitethernet1/1 switchport
 
 Configuring IGMP Snooping and Filtering:
   https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst4500/12-2/53SG/configuration/config/multi.html
+
+
+ip access-list extended allow_tcp_udp
+ permit tcp any any
+ permit udp any any
+ permit icmp any any
+ deny   ip any 224.0.0.0 15.255.255.255
+ deny   ip any any
+!
+
+ ip access-group allow_tcp_udp in
+or
+ ip access-group allow_tcp_udp out
